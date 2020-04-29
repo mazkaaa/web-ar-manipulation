@@ -6,6 +6,7 @@ AFRAME.registerComponent('tap-place', {
 		ground.addEventListener('click', event => {
 			const newElement = document.createElement('a-entity')
 			const touchPoint = event.detail.intersection.point
+			newElement.setAttribute('gltf-model', '#sandCastleModel')
 			newElement.setAttribute('position', touchPoint)
 			newElement.setAttribute('visible', 'false')
 			newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
@@ -16,7 +17,6 @@ AFRAME.registerComponent('tap-place', {
 			newElement.setAttribute('two-finger-spin')
 			newElement.setAttribute('pinch-scale')
 
-			newElement.setAttribute('gltf-model', '#sandCastleModel')
 			this.el.sceneEl.appendChild(newElement)
 			newElement.addEventListener('model-loaded', () => {
 				newElement.setAttribute('visible', 'true')
