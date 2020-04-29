@@ -1,6 +1,6 @@
 let objectSpawned = false
 
-AFRAME.registerComponent('tap-place', {
+/*AFRAME.registerComponent('tap-place', {
 	init: function(){
 		const ground = document.getElementById('ground')
 		ground.addEventListener('click', event => {
@@ -29,4 +29,5 @@ AFRAME.registerComponent('tap-place', {
 			})
 		})
 	}
-})
+})*/
+
