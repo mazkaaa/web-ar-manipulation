@@ -1,0 +1,22 @@
+{
+  "name": "web-ar-manipulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazkaaa/web-ar-manipulation.git"
+  },
+  "author": "mazkaaa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mazkaaa/web-ar-manipulation/issues"
+  },
+  "homepage": "https://github.com/mazkaaa/web-ar-manipulation#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

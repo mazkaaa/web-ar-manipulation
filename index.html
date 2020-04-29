@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WebAR Manipulation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="//cdn.8thwall.com/web/aframe/8frame-1.0.3.min.js"></script>
+        <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+        <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+        <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+        <script async src="https://apps.8thwall.com/xrweb?appKey=5EHcKFJM4nhxyQqtRxyWZ1LHJtOKB0BLOkSkfBe9OSJAzm2KPRwVs1MkBbZ6nULQt8S4bB"></script>
+
+        <script src="app.js"></script>
+        <script src="js/gesture-detector.js"></script>
+        <script src="js/hold-drag.js"></script>
+        <script src="js/pinch-scale.js"></script>
+        <script src="js/two-finger-spin.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <button class="btn btn-primary text-center">Gallery</button>
+        <a-scene
+            loading-screen="dotsColor: white; backgroundColor: black; enabled: true"
+            xrweb
+            gesture-detector
+            xrextras-almost-there
+            xrextras-loading
+            xrextras-runtime-error
+            renderer="colorManagement: true; physicallyCorrectLights: true;">
+
+            <a-assets>
+                <!-- Credit to Poly by Google for the model: https://poly.google.com/view/5ZMAz7_ucTn -->
+                <a-asset-item id="sandCastleModel" src="sand-castle.glb" preload="true"></a-asset-item>
+            </a-assets>
+            <a-camera
+                id="camera"
+                position="0 8 8"
+                raycaster="objects: .cantap"
+                cursor="
+                fuse: false;
+                rayOrigin: mouse;">
+            </a-camera>
+
+            <a-entity
+                id="ground"
+                class="cantap"
+                geometry="primitive: box"
+                material="color: #ffffff; transparent: true; opacity: 0.0"
+                scale="1000 2 1000"
+                position="0 -1 0">
+            </a-entity>
+
+        </a-scene>
+        
+    </body>
+</html>
